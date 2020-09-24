@@ -1,5 +1,10 @@
-* {
+html {
   box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -7,40 +12,64 @@ body {
   padding: 0 2%;
 }
 
-@media (min-width: 900px) {
-  body {
+li {
+  list-style: none;
+}
+
+@media (min-width: 426px) {
+  .wrapper {
     display: grid;
-    grid-template-rows: repeat(3, 2fr);
-    row-gap: 2%;
+    background-color: #eec4e5;
   }
+
+  .header {
+    grid-row: 1/3;
+    background-color: bisque;
+    padding: 16px;
+  }
+
+  /* .hero {
+    background-image: url("./images/fancy-coffee.jpg");
+    background-repeat: no-repeat;
+  } */
+
   .nav-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2%;
+    /* grid-template-columns: 1fr 2fr;
+    gap: 2%; */
+  }
+  .nav-logo {
+    grid-column: 1/2;
   }
   .nav-list {
+    grid-column: 2/3;
     display: flex;
     margin: 0;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
-  .hero-grid {
+  .main-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2%;
-  }
-  .grid-container {
-    display: grid;
+    grid-row: 3/4;
+    background-color: bisque;
+    padding: 16px;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2%;
-    /* grid-template-rows: 1fr 1fr 1fr; */
   }
 
-  .grid-container > div {
+  .main-grid > div {
     text-align: center;
   }
-  .header,
+  .hero,
   .footer {
     text-align: center;
   }
+
+  .footer {
+    padding: 16px;
+    grid-row: 4/5;
+  }
+}
+
+@media (min-width: 900px) {
 }
